@@ -4,20 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hubungi Saya</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-success-subtle">
+    <head>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><h1>M David</h1></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          </head>
+
     <main>
         <form action="">
             <label for="nama">Nama  </label>
-            <input type="text" name="nama" id=""> <br>
+            <input type="text" name="nama" id="" class="grouping"> 
             <label for="email">Email    </label>
-            <input type="email" name="email" id=""> <br>
+            <input type="email" name="email" id="" class="grouping" >   <p id="emailError" class="error"></p>
             <label for="telp">No telp   </label>
-            <input type="text" name="telp" id=""> <br>
+            <input type="text" name="telp" id="phone" class="grouping"> <p id="phoneError" class="error"></p>
             <label for="nama">Text  </label>
-            <textarea style="resize: none;" name="text"></textarea> <br>
-            <input type="submit" value="kirim">
+            <textarea style="resize: none;" name="text" class="grouping"></textarea> 
+            <button onclick="kirim()">kirim</button>
         </form>
+        <div class="head">
+            <table class="table table-striped">
+                <th>nama</th>
+                <th>email</th>
+                <th>no</th>
+                <th>text</th>
+              </table>
+        </div>
+        <table class="table table-striped">
+            <td>bla</td>
+            <td>bla@gmail</td>
+            <td>0101</td>
+            <td>halo</td>
+          </table>
+          <p id="jam"></p>
+      
+            <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="main.html">
+               <- Kembali
+               </a>
+
+            
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function kirim(){
+        var email = document.getElementById("email").value;
+        if (!email.includes('@')) {
+                emailError.innerHTML = "Email harus mengandung karakter '@'.";
+                return;
+            }
+            var phone = document.getElementById("phone").value;
+            var phoneError = document.getElementById("phoneError");
+            phoneError.innerHTML = "";
+
+            // Validasi nomor telepon harus terdiri dari 12 digit
+            if (phone.length !== 12 || isNaN(phone)) {
+                phoneError.innerHTML = "Nomor telepon harus terdiri dari 12 digit angka.";
+                return;
+            }
+
+           var jam=new Date();
+
+           document.getElementById('jam').innerHTML=jam;
+
+      }
+
+    </script>
 </body>
 </html>

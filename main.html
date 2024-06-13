@@ -4,27 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laman Uatama</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style2.css">
 </head>
-<body>
-    <header><h1><center>M David</center></h1></header>
-    <main>
-        <img src="gambar.jpg" alt="" width="500px" height="500px"> <br>
-        <a href="hubungisaya.html">Hubungi saya</a>
-        <table border="1px">
-            <th>Nama</th>
-            <th>Email</th>
-            <th>No Telp</th>
-            <th>Text</th>
-            <tr>
-                <td>bla</td>
-                <td>bla@proxy.com</td>
-                <td>0313719310319</td>
-                <td>Haloo</td>
-            </tr>
-        </table>
+<body class="bg-success-subtle">
+    <head>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><h1>M David</h1></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      </head>
+    <main class="d-block p-2 text-bg-primary">
+        <img src="gambar.jpg" alt="" id="gambar">
+        <p class="fs-2 text">Nama: M David</p>
+        <p class="fs-2 text">Jenis Kelamin: Laki-Laki</p>
+        <p class="fs-2 text">Halo nama saya David</p>
+        <a class="icon-link icon-link-hover fs-2 text text-danger" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="hubungisaya.html">
+           Hubungi Saya ->
+          </a>
+          <div>
+            <h3>Pengubah suhu</h3>
+            Farenheit: <input type="number" id="fahrenheit" name="fahrenheit"><br>
+           
+            <button onclick="hasil()">Uji</button>
+           </div>
+           <p id="hasil"></p>
+           <p id="warna">ubah warna</p>
     </main>
     <footer>
-        <a href="https://github.com/DavidEko831"><center>My Github</center></a>
+        <a href="https://github.com/DavidEko831"  class=" link-light bg-black" >Github</a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function hasil(){
+        var fahrenheit = document.getElementById("fahrenheit").value;
+        var celsius = (fahrenheit - 32) * 5 / 9;
+        document.getElementById("hasil").innerHTML = fahrenheit + " Fahrenheit = " + celsius.toFixed(2) + " Celsius";
+      }
+
+     
+      document.getElementById('warna').style.backgroundColor="green";
+      
+    </script>
 </body>
 </html>
